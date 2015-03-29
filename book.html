@@ -1,0 +1,115 @@
+<html>
+<head>
+  <title>Cure for Dyslexia</title>
+  <meta charset="utf-8">
+  <meta name="Description" CONTENT="A experiment that reads books to dyslexics">
+  <link rel="stylesheet" type="text/css" href="./fluff/css/default.css"/>
+  <script>
+    	var SpritzSettings = {
+    		anonymousEnabled: true,
+    		clientId: "4239146fe28330525",
+			redirectUri: "http://" + window.location.host + "/spritz/login_success"
+		};
+	</script>
+  <!--Include google-->
+  <script src="fluff/google.js"></script>  
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+	<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+	<script src="fluff/spritz.min.js"></script>
+	<script src="fluff/packed.js?0350f7f1"></script>
+	<style>
+		.spritzer-container {
+		  border: none;
+		  background-color: inherit;
+		  box-shadow: none;
+		  height: initial;
+		}
+		textarea { 
+		  height: 180px; 
+		  width:  600px;
+		}
+	</style>
+
+	<script type="text/javascript">
+		function disableButton() {}
+		function darken() {}
+		function lighten() {}  
+		function getQueryVariable(variable) {
+    var query = window.location.search.substring(1);
+    var vars = query.split("&");
+    for (var i=0;i<vars.length;i++) {
+      var pair = vars[i].split("=");
+      if (pair[0] == variable) {
+        return pair[1];
+      }
+    } 
+    return '';
+   }
+	</script>
+</head>
+<body oncontextmenu="return false">
+
+<div id="view">
+  <div id="head">
+    <div id="logo">
+      <h1>Cure for Dyslexia Experiment</h1>
+      <h2>By: Hunter Pearson</h2>
+    </div>
+    <div id="mainMenu">
+      <ul>
+        <li><a href="index.html">Home Page</a></li>
+        <li class="active"><a href="uploader.html">Loaded Book</a></a></li>
+        <li><a href="tools.html">Tools / Software</a></li>
+        <li><a href="qr.html">Mobile Device</a></li>
+        <li><a href="tutorial.html">Tutorials</a></li>
+        <li><a href="about.html">About Project</a></li>
+        <li><a href="https://youtu.be/PyA3IaIdjm4">HMD Youtube</a></li>
+      </ul>
+    </div>
+  </div>
+  <div id="content">
+<center><br><br><br>
+	<div class="container" id="content1">
+		<div class="jumbotron" id="jumbotron">
+				<div id="spritzer"></div><br>  
+				<textarea class="form-control" id="inputText"></textarea><br>
+				<div class="btn-group btn-group-lg"><button id="startSpritz" type="submit" class="btn btn-success">Read to me</button></div>		
+		</div>
+	</div>
+</center>
+	<small>*Long books may take some time to load</small>
+</body>
+  <script>
+    var param1var = getQueryVariable("bookname");
+    jQuery.get("books/"+param1var+".txt",function(data){
+      inputText.innerHTML = data;
+    });
+  </script>
+  
+  </div>
+  <div id="foot">
+    <p class="fl"><small>I am not proficient in copywrite law so shoot email an email if you have a complaint.<br>
+    I'll be happy to comply [Not here for profit its just an experiment]</p>
+    <p class="fr">Created by Hunter Pearson</p>
+  </div>
+</div>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-61316013-1', 'auto');
+  ga('send', 'pageview');
+</script>
+</body>
+</html>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    

@@ -1,0 +1,223 @@
+<html>
+<head>
+  <title>Cure for Dyslexia</title>
+  <meta charset="utf-8">
+  <meta name="Description" CONTENT="A experiment that reads books to dyslexics">
+  <link rel="stylesheet" type="text/css" href="./fluff/css/default.css"/>
+  <!--Website style sheet-->
+  <link rel="stylesheet" type="text/css" href="./fluff/css/css.css">
+  <!--Include jquery-->
+  <script type="text/javascript" src="//code.jquery.com/jquery-1.10.1.js"></script>
+  <!--Include sorter-->
+  <script src="fluff/sorttable.js"></script>
+  <!--Include google-->
+  <script src="fluff/google.js"></script>  
+  <style>#view { width: 1010px; margin: 0 auto; }</style>
+  <!--Create a javascript function to estimate reading times based on WPM-->
+  <script>
+    // The function returns the estimated wpm time completion
+    function Calc(words, wpm) {
+        var tmp = (words / wpm);
+        var tmp = tmp / 60;
+        var tmp = tmp.toFixed(2);
+        return tmp;
+    }
+
+    // The function returns a table row based on variables
+    function Display(bookname, words) {
+      booktext = bookname.replace(/_/g,' ')
+      document.write("<td class='alnleft operator' style='word-wrap: break-word;'><b>"+booktext+"</b></td>");
+      document.write("<td class='alnright'>&nbsp;&nbsp;"+Number(parseInt(words/400)).toLocaleString('en')+"&nbsp;&nbsp;</td>");
+      document.write("<td class='alnright'>"+Number(words).toLocaleString('en')+"</td>");
+      document.write("<td nowrap class='alnright'>"+Calc(words, 250)+" hours</td>");
+      document.write("<td nowrap class='alnright'>"+Calc(words, 150)+" hours</td>");
+      document.write("<td nowrap class='alnright'><b>"+Calc(words, 300)+" hours</b></td>");
+      document.write("<td nowrap class='alnright'><b>"+Calc(words, 500)+" hours</b></td>");
+      document.write("<td class='alnright'><a href='HMD.html?bookname="+bookname+"'>Click&nbsp;Here</a></td>");   
+      document.write("<td class='alnright'><a href='book.html?bookname="+bookname+"'>Click&nbsp;Here</a></td></tr>"); 
+    }
+    
+    $(function(){
+    // Change the selector if needed
+    var $table = $('table.scroll'),
+        $bodyCells = $table.find('tbody tr:first').children(),
+        colWidth;
+    
+    // Adjust the width of thead cells when window resizes
+    $(window).resize(function() {
+        // Get the tbody columns width array
+        colWidth = $bodyCells.map(function() {
+            return $(this).width();
+        }).get();
+        
+        // Set the width of thead columns
+        $table.find('thead tr').children().each(function(i, v) {
+            $(v).width(colWidth[i]);
+        });    
+    }).resize(); // Trigger resize handler
+    });//]]>  
+  </script>
+</head>
+<body oncontextmenu="return false">
+<div id="view">
+  <div id="head">
+    <div id="logo">
+      <h1>Cure for Dyslexia Experiment</h1>
+      <h2>By: Hunter Pearson</h2>
+    </div>
+    <div id="mainMenu">
+      <ul>
+        <li class="active"><a href="index.html">Home Page</a></li>
+        <li><a href="uploader.html">Uploader</a></li>
+        <li><a href="tools.html">Tools / Software</a></li>
+        <li><a href="qr.html">Mobile Device</a></li>
+        <li><a href="tutorial.html">Tutorials</a></li>
+        <li><a href="about.html">About Project</a></li>
+        <li><a href="https://youtu.be/PyA3IaIdjm4">HMD Youtube</a></li>
+      </ul>
+    </div>
+  </div>
+  <div id="content">
+<h1>Cure for Dyslexia Test</h1>
+<br>
+<!--Semi dynamicly create a table "dashboard" for book selection-->
+<div class="CSSTableGenerator"style="width:90%">
+  <table class="scroll sortable" bgcolor="#FFFFFF">
+    <thead>
+      <tr>
+        <th>Book Title</th>
+        <th>Pages</th>
+        <th>Words</th>
+        <th>Standard (250 wpm)</th>
+        <th>Audio Book</th>
+        <th>New ETA<br>(300 wpm)</th>
+        <th>Ultra ETA<br>(500 wpm)</th>
+        <th>HMD<br>*Experts</th>
+        <th>Online<br></th>
+      </tr>
+    </thead>
+    <tbody>
+      <script>
+        var bookname = 'Twenty_Thousand_Leagues_Under_The_Sea';
+        var words    = '59973';
+        Display(bookname,words);
+        
+        var bookname = 'A_Journey_to_the_Centre_of_the_Earth';
+        var words    = '86793';
+        Display(bookname,words);
+        
+        var bookname = 'Pride_and_Prejudice';
+        var words    = '121561';
+        Display(bookname,words);
+        
+        var bookname = 'The_Adventures_of_Tom_Sawyer';
+        var words    = '69818';
+        Display(bookname,words);
+        
+        var bookname = 'The_Shunned_House';
+        var words    = '10828';
+        Display(bookname,words);
+        
+        var bookname = 'War_and_Peace';
+        var words    = '587287';
+        Display(bookname,words);
+      
+        var bookname = 'Writings_in_the_United_Amateur';
+        var words    = '96308';
+        Display(bookname,words);
+      
+        var bookname = 'Frankenstein';
+        var words    = '74942';
+        Display(bookname,words);         
+      
+        var bookname = 'The_Adventures_of_Sherlock_Holmes';
+        var words    = '104410';
+        Display(bookname,words);         
+                
+        var bookname = 'Dracula';
+        var words    = '160811';
+        Display(bookname,words);
+                 
+        var bookname = 'Black_Beauty';
+        var words    = '59688';
+        Display(bookname,words);       
+                 
+        var bookname = 'Gullivers_Travels';
+        var words    = '102173';
+        Display(bookname,words);       
+                  
+        var bookname = 'Heart_of_Darkness';
+        var words    = '37908';
+        Display(bookname,words);                   
+                  
+        var bookname = 'Little_Women';
+        var words    = '185889';
+        Display(bookname,words);           
+                   
+        var bookname = 'Mr_Spaceship';
+        var words    = '10612';
+        Display(bookname,words);          
+                  
+        var bookname = 'Oliver_Twist';
+        var words    = '157192';
+        Display(bookname,words);           
+                  
+        var bookname = 'Peter_Pan';
+        var words    = '50541';
+        Display(bookname,words);           
+                  
+        var bookname = 'The_Jungle';
+        var words    = '149119';
+        Display(bookname,words);           
+                  
+        var bookname = 'The_Jungle_Book';
+        var words    = '50795';
+        Display(bookname,words);          
+  
+        var bookname = 'The_Life_and_Adventures_of_Robinson_Crusoe';
+        var words    = '120983';
+        Display(bookname,words);  
+                  
+        var bookname = 'The_Red_Room';
+        var words    = '3924';
+        Display(bookname,words);  
+                  
+        var bookname = 'The_Return_of_Sherlock_Holmes';
+        var words    = '112056';
+        Display(bookname,words);          
+                  
+        var bookname = 'The_Time_Machine';
+        var words    = '32306';
+        Display(bookname,words);          
+
+        var bookname = 'The_Variable_Man';
+        var words    = '25102';
+        Display(bookname,words);          
+                  
+        var bookname = 'The_War_of_the_Worlds';
+        var words    = '59973';
+        Display(bookname,words);          
+                  
+        var bookname = 'Uncle_Toms_Cabin';
+        var words    = '180605';
+        Display(bookname,words);        
+      </script>      
+    </tbody>
+  </table>
+</div>
+<small>*"Standard WPM" is the estimated WPM of none dyslexic readers</small><br>
+<small>*Page count is incorrect and calcualted off of 500 words per page</small><br>
+<small>*Books where converted without error checking. May contain artifacts and errors</small><br>
+  </div>
+  <div id="foot">
+    <p class="fl"><small>I am not proficient in copywrite law so shoot email an email if you have a complaint.<br>
+    I'll be happy to comply [Not here for profit its just an experiment]</p>
+    <p class="fr">Created by Hunter Pearson</p>
+  </div>
+</div>
+</body>
+</html>
+    
+    
+    
+    

@@ -1,0 +1,111 @@
+<html>
+<head>
+  <title>Cure for Dyslexia</title>
+  <meta charset="utf-8">
+  <meta name="Description" CONTENT="A experiment that reads books to dyslexics">
+  <link rel="stylesheet" type="text/css" href="./fluff/css/default.css"/>
+  <!--Include google-->
+  <script src="fluff/google.js"></script>  
+</head>
+
+<body oncontextmenu="return false">
+<div id="view">
+  <div id="head">
+    <div id="logo">
+      <h1>Cure for Dyslexia Experiment</h1>
+      <h2>By: Hunter Pearson</h2>
+    </div>
+    <div id="mainMenu">
+      <ul>
+        <li><a href="index.html">Home Page</a></li>
+        <li class="active"><a href="uploader.html">Uploader</a></li>
+        <li><a href="tools.html">Tools / Software</a></li>
+        <li><a href="qr.html">Mobile Device</a></li>
+        <li><a href="tutorial.html">Tutorials</a></li>
+        <li><a href="about.html">About Project</a></li>
+        <li><a href="https://youtu.be/PyA3IaIdjm4">HMD Youtube</a></li>
+      </ul>
+    </div>
+  </div>
+  <div id="content">
+    <script>
+    	var SpritzSettings = {
+    		anonymousEnabled: true,
+    		clientId: "4239146fe28330525",
+    		redirectUri: "http://" + window.location.host + "/spritz/login_success"
+    	};
+  	</script>
+  
+  	<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  	<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+  	<script src="fluff/spritz.min.js"></script>
+  	<script src="fluff/packed.js?0350f7f1"></script>
+  	<script>
+  		function disableButton() {}
+  		function darken() {}
+  		function lighten() {}
+      function onFileSelected(event) {
+        var selectedFile = event.target.files[0];
+        var reader = new FileReader();
+        var result = document.getElementById("inputText");
+        reader.onload = function(event) {
+          result.innerHTML = event.target.result;
+        };
+        reader.readAsText(selectedFile);
+      }
+  	</script>	
+  	<style>
+  		.spritzer-container {
+  		  border: none;
+  		  background-color: inherit;
+  		  box-shadow: none;
+  		  height: initial;
+  		}
+  		
+  		textarea { 
+  		  height: 135px; 
+  		  width:  600px;
+  		}
+  	</style>
+
+
+
+
+<center>
+	<div class="container" id="content1">
+		<div class="jumbotron" id="jumbotron">
+				<div id="spritzer"></div><br>
+				<div class="btn-group btn-group-lg"><button id="startSpritz" type="submit" class="btn btn-success">Read It</button></div><br>
+				<textarea class="form-control" id="inputText"></textarea><br>
+				<input type="file" onchange="onFileSelected(event)">
+		</div>
+	</div>
+</center>	
+<small>*Long books may take some time to load</small>
+
+
+
+  </div>
+  <div id="foot">
+    <p class="fl"><small>I am not proficient in copywrite law so shoot email an email if you have a complaint.<br>
+    I'll be happy to comply [Not here for profit its just an experiment]</p>
+    <p class="fr">Created by Hunter Pearson</p>
+  </div>
+</div>
+</body>
+</html>
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
